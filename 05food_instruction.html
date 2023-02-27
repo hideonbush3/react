@@ -3,16 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>React Component</title>
-
-    <style>
-      .root2 {
-        color: orange;
-      }
-      #root3 {
-        color: red;
-        font-style: italic;
-      }
-    </style>
   </head>
   <body>
     <div id="root1"></div>
@@ -50,7 +40,7 @@
           </section>
         );
       };
-
+      ReactDOM.render(<Food1 />, document.querySelector("#root1"));
 
 
       const menu = "구운연어";
@@ -70,9 +60,8 @@
         "옐로 스쿼시를 추가하고 다시 30분간 오븐에서 익힌다.",
         "오븐에서 그릇을 꺼내서 15분간 식힌다음에 상추를 곁들여서 내놓는다.",
       ];
-
       const Food2 = () => {
-        // items 배열의 값을 하나 가져와서 li태그내에 넣고 itemsJSX에 할당함
+        // items 배열의 값을 하나 가져와서 li 태그에 넣고 itemsJSX에 할당함
         let itemsJSX = items.map((val) => <li key={val}>{val}</li>);
         let instructsJSX = instructs.map((val) => <p key={val}>{val}</p>);
         return (
@@ -86,11 +75,8 @@
           </section>
         );
       };
-
-      // -------------------------------------------------------
-
-      ReactDOM.render(<Food1 />, document.querySelector("#root1"));
       ReactDOM.render(<Food2 />, document.querySelector("#root2"));
+
     </script>
   </body>
 </html>
