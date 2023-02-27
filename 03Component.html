@@ -74,6 +74,10 @@
       }
 
       const Hello5 = () => {
+        return <h2><span>Hello</span>, <em>Wonderful</em> World!!</h2>;
+      }
+
+      const Hello6 = () => {
         return  <h3 className='abc' style={{textAlign: 'center'}}
                     onClick={ () => {alert(`Hello, Again~!!`)}}>
           Hello, Another World!!</h3>;
@@ -94,6 +98,7 @@
       ReactDOM.render(Hello3(), document.querySelector("#root3"));
       ReactDOM.render(<Hello4 />, document.querySelector("#root4"));
       ReactDOM.render(<Hello5 />, document.querySelector("#root5"));
+      ReactDOM.render(<Hello6 />, document.querySelector("#root6"));
       ReactDOM.render(<Hello7 />, document.querySelector("#root7"));
     </script>
   </body>
