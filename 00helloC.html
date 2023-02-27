@@ -16,13 +16,13 @@
     <script src="js/vender/babel.min.js"></script>
 
     <script type="text/babel">
+
       const { Fragment, useState } = React;
 
-      // UI를 컴퍼넌트로 정의
       const App = () => {
         // const [변수명, setXxx] = useState('초기값');
         // 'Just React'라는 값을 p1text라는 변수에 넣음
-        // 'Just React' 값은 setP1text라는 변수로만 컨트롤가능
+        // setP1text는 useState 훅으로 생성한 p1text 상태 변수의 값을 변경하는 함수
         const [p1text, setP1text] = useState('Just React');
         const [p2text, setP2text] = useState('2022');
 
@@ -32,6 +32,7 @@
         };
         return (
           <Fragment>
+            <!-- {}는 JSX에서 변수를 출력하는 방법 -->
             <p id="p1" className="POne">{p1text}</p>
             <p id="p2" className="PTwo">{p2text}</p>
             <button onClick={changeContent}>Change Content</button>

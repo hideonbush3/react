@@ -4,13 +4,8 @@
     <meta charset="UTF-8" />
     <title>React.createElement</title>
     <style>
-      .root2 {
-        color: orange;
-      }
-      #root3 {
-        color: red;
-        font-style: italic;
-      }
+      .root2 {color: orange;}
+      #root3 {color: red; font-style: italic;}
     </style>
   </head>
   <body>
@@ -25,22 +20,19 @@
 
     <script>
       // createElement(요소, 속성, 내용, 자식요소)
-      // render(대상요소, DOM요소)
+      // render(대상요소, DOM요소)  - 대상요소를 DOM요소의 자식요소로 렌더링
 
       ReactDOM.render(
-        // <h1>Hello, World!!</h1>
         React.createElement("h1", null, "Hello, World!!"),
         document.querySelector("#root1")
       );
 
       ReactDOM.render(
-        // <h1 class='root2'>Hello, World!!</h1>
         React.createElement("h1", { className: "root2" }, "Hello, World!!"),
         document.querySelector("#root2")
       );
 
       ReactDOM.render(
-        // <h2 id='root3'><span>Hello</span>, World!!</h2>
         React.createElement(
           "h2",
           { id: "root3" },
@@ -51,7 +43,6 @@
       );
 
       ReactDOM.render(
-        // <h2><span>Hello</span>, <em>Wonderful</em>World!!</h2>
         React.createElement(
           "h2",
           null,
@@ -59,7 +50,7 @@
             "span",
             null,
             "Hello",
-            React.createElement("em", null, "Wonderful")
+            React.createElement("em", null, ", Wonderful")
           ),
           " World"
         ),
@@ -67,9 +58,6 @@
       );
 
       ReactDOM.render(
-        // <h3 class='abc' style='text-align: center'
-        // onclick='alert(`Hello, Again~!!`)'>
-        // Hello, Another World!!</h3>
         React.createElement(
           "h3",
           {
@@ -77,9 +65,9 @@
             style: { textAlign: "center" },
             onClick: () => {
               alert(`Hello, Again`);
-            }
+            },
           },
-          "Hello, Another World!!"
+          "Hello, Another World!!",
         ),
         document.querySelector("#root5")
       );
