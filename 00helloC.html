@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <style>
+      .POne {color : red}
+      .PTwo {color : green}
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="js/vender/react/react@16.14.dev.js"></script>
+    <script src="js/vender/react/react-dom@16.14..dev.js"></script>
+    <script src="js/vender/babel.min.js"></script>
+
+    <script type="text/babel">
+      const { Fragment, useState } = React;
+
+      // UI를 컴퍼넌트로 정의
+      const App = () => {
+        // const [변수명, setXxx] = useState('초기값');
+        // 'Just React'라는 값을 p1text라는 변수에 넣음
+        // 'Just React' 값은 setP1text라는 변수로만 컨트롤가능
+        const [p1text, setP1text] = useState('Just React');
+        const [p2text, setP2text] = useState('2022');
+
+        const changeContent = () => {
+          setP1text('Welcome to React World');
+          setP2text('Since 2013');
+        };
+        return (
+          <Fragment>
+            <p id="p1" className="POne">{p1text}</p>
+            <p id="p2" className="PTwo">{p2text}</p>
+            <button onClick={changeContent}>Change Content</button>
+          </Fragment>
+        );
+      };
+
+      ReactDOM.render(
+        // 위에서 정의한 컴포넌트 호출
+        <App />,
+        document.getElementById("app")
+      );
+    </script>
+  </body>
+</html>
